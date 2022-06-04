@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="775" pageHeight="600" columnWidth="735" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f5f3e23-173f-44e9-bb8d-a54451e443c6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select nombreinfante, fecha_ingreso_guarderia, infante_fecha_nacimineto, fecha_de_baja,
+acudiente_nombre, costea_nombre 
+from infantes;
+]]>
+	</queryString>
+	<field name="nombreinfante" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_ingreso_guarderia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="infante_fecha_nacimineto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_de_baja" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acudiente_nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="costea_nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="nombreinfante_1" class="java.lang.Integer" resetType="Page" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{nombreinfante}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="735" height="101" forecolor="#FFFFFF" backcolor="#000000" uuid="a43154bb-f183-4459-aaf9-c98ae8a63fa7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="80" isBold="false" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Infantes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="123" height="26" backcolor="#000000" uuid="6dc959d7-1ded-4a9e-94e6-d73e811df3ee"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Total Infantes: ]]></text>
+			</staticText>
+			<textField evaluationTime="Page">
+				<reportElement x="125" y="0" width="142" height="26" uuid="9799eeae-9605-4516-998f-e4731064a346"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{nombreinfante_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="2" width="149" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="29e465c2-cdf5-496e-8f39-5df1f19c1f81"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nombre del Infante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="149" y="2" width="117" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="a7a374f4-74db-4999-8700-9aad4265b546"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha de ingreso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="266" y="2" width="135" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="678e3af9-a112-44fa-9130-5ae30722f0fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha de Nacimiento]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="266" y="2" width="1" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="499f6d91-e290-4358-b650-478300959a86"/>
+			</line>
+			<line>
+				<reportElement mode="Opaque" x="149" y="2" width="1" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="b820be2c-8a30-4e80-96da-629db6c09bb8"/>
+			</line>
+			<line>
+				<reportElement mode="Opaque" x="401" y="2" width="1" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="f9d30e9b-7141-4243-a913-67a16f83794a"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="402" y="2" width="100" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="fbec4a72-7e1a-4d8a-8c4b-73e631ac9df2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha de baja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="503" y="2" width="119" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="ef5cb67a-e371-4744-8a8b-f94db2f0f5d0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nombre Acudiente]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="502" y="2" width="1" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="707d3065-89f4-4de5-ba03-ae875c000d12"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="623" y="2" width="112" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="d10bb18d-064c-4bf5-9efe-9c1888e5d114"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Nombre Deudor]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="622" y="0" width="1" height="32" forecolor="#FFFFFF" backcolor="#000000" uuid="2d677fef-7f67-4adb-9106-24e4fb2170d3"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="149" height="20" uuid="2f3a7dce-303d-4877-82a7-e957edf56586"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombreinfante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="0" width="117" height="20" uuid="744323bc-400a-4d62-a0a2-e8dee0432449"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fecha_ingreso_guarderia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="136" height="20" uuid="fd4d51c1-7356-4707-8307-b8d4731c044c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{infante_fecha_nacimineto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="0" width="100" height="20" uuid="4f714ba0-fa27-4a4f-81f7-69e7cdbf6581"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fecha_de_baja}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="735" height="1" uuid="f941f2b2-6ffe-4f02-8cbb-a4fcecf8f133"/>
+			</line>
+			<textField>
+				<reportElement x="502" y="0" width="121" height="20" uuid="652b52fd-070c-4c0c-a473-5b6ce635ab62"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{acudiente_nombre}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="502" y="0" width="1" height="20" uuid="3c4a94ca-bb03-4e2e-b9cb-b40999c7b73e"/>
+			</line>
+			<line>
+				<reportElement x="401" y="0" width="1" height="21" uuid="f147052f-0537-40f5-bbc8-5c67032ff6d2"/>
+			</line>
+			<line>
+				<reportElement x="266" y="0" width="1" height="21" uuid="d4e53f7e-710d-4b09-af84-ca648ac68d09"/>
+			</line>
+			<line>
+				<reportElement x="149" y="0" width="1" height="20" uuid="a7d458b2-7e53-45d5-8702-8e8ad0f5e5e9"/>
+			</line>
+			<textField>
+				<reportElement x="623" y="1" width="112" height="20" uuid="2935006b-5efe-4b69-9584-6f25cf236c4b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{costea_nombre}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="621" y="0" width="1" height="20" uuid="72b82709-2726-4e17-99f9-e38b04c25901"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="596" y="0" width="139" height="20" uuid="6392009d-e238-427b-ac60-f0969efb1668"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="27d1fa9b-298f-4ac5-8712-3dad10c233e8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>
